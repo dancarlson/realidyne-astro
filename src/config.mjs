@@ -1,14 +1,22 @@
 export const SITE = {
-	name: 'AstroWind',
+	name: 'Realidyne',
 
-	origin: 'https://astrowind.vercel.app',
+	origin: 'https://relidyne.com',
 	basePathname: '/',
 
-	title: 'AstroWind — Your website with Astro + Tailwind CSS',
-	description: '🚀 AstroWind is a free and ready to start template to make your website using Astro and Tailwind CSS.',
+	title: 'Realidyne — In a multiverse of posibilities',
+	description: 'At Realidyne, we aim to inspire action by moving hearts, minds and mountains. And we love what we do because the path ahead is ours to forge.',
 
 	googleAnalyticsId: false, // or "G-XXXXXXXXXX",
 	googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
+
+	facebook: "https://www.facebook.com/realidyne/",
+	twitter: "https://twitter.com/realidyne",
+	linkedin: "https://www.linkedin.com/company/realidyne/",
+	instagram: "https://www.instagram.com/realidyne/",
+	phone: "1-866-375-5147",
+	email: "info@realidyne.com",
+	address: "",
 };
 
 export const BLOG = {
