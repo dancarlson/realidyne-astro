@@ -9,7 +9,7 @@
 
 - ✅ Integration with **Tailwind CSS** ([@astrojs/tailwind](https://docs.astro.build/en/guides/integrations-guide/tailwind/)).
 - ✅ Supports **Dark mode**.
-- ✅ **Fast and SEO friendly blog** with automatic **RSS feed** ([@astrojs/rss](https://docs.astro.build/en/guides/rss/)).
+- ✅ **Fast and SEO friendly work** with automatic **RSS feed** ([@astrojs/rss](https://docs.astro.build/en/guides/rss/)).
 - ✅ **Image optimization** ([@astrojs/images](https://docs.astro.build/en/guides/integrations-guide/image/)).
 - ✅ Generation of **project sitemap** based on your routes ([@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)).
 - ✅ **Open Graph tags** for social media sharing
@@ -57,7 +57,7 @@ Inside AstroWind template, you'll see the following folders and files:
 ```
 /
 ├── data/
-|   └── blog/
+|   └── work/
 |       ├── post-slug-1.md
 |       └── ...
 ├── public/
@@ -70,7 +70,7 @@ Inside AstroWind template, you'll see the following folders and files:
 |   |       └── base.css
 │   ├── components/
 │   │   ├── atoms/
-│   │   ├── blog/
+│   │   ├── work/
 │   │   ├── core/
 |   |   └── widgets/
 |   |       ├── Header.astro
@@ -80,7 +80,7 @@ Inside AstroWind template, you'll see the following folders and files:
 │   |   |── BaseLayout.astro
 │   |   └── ...
 │   ├── pages/
-│   |   ├── [...blog]/
+│   |   ├── [...work]/
 |   |   |   ├── [...page].astro
 |   |   |   └── [slug].astro
 │   |   ├── [...categories]/
@@ -141,13 +141,13 @@ export const SITE = {
   googleSiteVerificationId: false // or some value,
 };
 
-export const BLOG = {
+export const WORK = {
   disabled: false,
   postsPerPage: 4,
 
-  blog: {
+  work: {
     disabled: false,
-    pathname: 'blog', // blog main path, you can change this to "articles" (/articles)
+    pathname: 'work', // work main path, you can change this to "articles" (/articles)
   },
 
   post: {
@@ -210,10 +210,10 @@ Clone this repository on own GitHub account and deploy to Vercel:
   - Make the use of images clean and intuitive
 - *SEO*:
   - **(DONE)** Add support to easily manage SEO meta-tags (title, description, canonical, social sharing, ...)
-- *Blog*:
-  - **(DONE)** Support to Fast and SEO friendly blog
+- *Work*:
+  - **(DONE)** Support to Fast and SEO friendly work
   - **(DONE)** Add support for categories and tags.
-  - Improve blog design
+  - Improve work design
   - Create component or utilities for latest posts
   - Create component or utilities for related posts
   - Add more *shortcodes* or *embed* functions to posts in Markdown: (eg video, tweet...)

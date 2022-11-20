@@ -1,22 +1,22 @@
 ---
-import { SITE, BLOG } from '~/config.mjs';
+import { SITE, WORK } from '~/config.mjs';
 
 import Layout from '~/layouts/PageLayout.astro';
-import SinglePost from '~/components/blog/SinglePost.astro';
+import SinglePost from '~/components/work/SinglePost.astro';
 
 import { getCanonical, getPermalink, cleanSlug, POST_BASE } from '~/utils/permalinks';
 import { fetchPosts } from '~/utils/posts';
 import { findImage } from '~/utils/images';
 
 export async function getStaticPaths() {
-	if (BLOG?.disabled || BLOG?.post?.disabled) return [];
+	if (WORK?.disabled || WORK?.post?.disabled) return [];
 
 	const posts = await fetchPosts();
 
 	return posts.map((post) => ({
 		params: {
 			slug: cleanSlug(post.slug),
-			blog: POST_BASE || undefined,
+			work: POST_BASE || undefined,
 		},
 		props: { post },
 	}));

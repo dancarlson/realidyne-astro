@@ -27,7 +27,7 @@ const getNormalizedPost = async (post) => {
 };
 
 const load = async function () {
-	const posts = import.meta.glob('~/../data/blog/**/*.md', {
+	const posts = import.meta.glob('~/../data/work/**/*.md', {
 		eager: true,
 	});
 

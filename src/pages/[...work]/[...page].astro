@@ -1,21 +1,21 @@
 ---
-import { SITE, BLOG } from '~/config.mjs';
+import { SITE, WORK } from '~/config.mjs';
 
-import Layout from '~/layouts/BlogLayout.astro';
-import BlogList from '~/components/blog/List.astro';
+import Layout from '~/layouts/WorkLayout.astro';
+import WorkList from '~/components/work/List.astro';
 import Pagination from '~/components/atoms/Pagination.astro';
 
 import { fetchPosts } from '~/utils/posts';
-import { getCanonical, getPermalink, BLOG_BASE } from '~/utils/permalinks';
+import { getCanonical, getPermalink, WORK_BASE } from '~/utils/permalinks';
 
 export async function getStaticPaths({ paginate }) {
-	if (BLOG?.disabled || BLOG?.blog?.disabled) return [];
+	if (WORK?.disabled || WORK?.work?.disabled) return [];
 
 	const posts = await fetchPosts();
 
 	return paginate(posts, {
-		params: { blog: BLOG_BASE || undefined },
-		pageSize: BLOG.postsPerPage,
+		params: { work: WORK_BASE || undefined },
+		pageSize: WORK.postsPerPage,
 	});
 }
 
@@ -23,10 +23,10 @@ const { page } = Astro.props;
 const currentPage = page.currentPage ?? 1;
 
 const meta = {
-	title: `Blog ${currentPage > 1 ? `— Page ${currentPage} ` : ''}— ${SITE.name}`,
+	title: `Work ${currentPage > 1 ? `— Page ${currentPage} ` : ''}— ${SITE.name}`,
 	description: SITE.description,
 	canonical: getCanonical(getPermalink(page.url.current)),
-	ogType: "blog",
+	ogType: "work",
 	noindex: currentPage > 1
 };
 ---
@@ -36,6 +36,6 @@ const meta = {
 		News and step-by-step guides about
 		<span class="bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500">AstroWind</span>
 	</Fragment>
-	<BlogList posts={page.data} />
+	<WorkList posts={page.data} />
 	<Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
 </Layout>

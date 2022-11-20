@@ -19,13 +19,13 @@ export const SITE = {
 	address: "",
 };
 
-export const BLOG = {
+export const WORK = {
 	disabled: false,
 	postsPerPage: 4,
 
-	blog: {
+	work: {
 		disabled: false,
-		pathname: 'blog', // blog main path, you can change this to "articles" (/articles)
+		pathname: 'work', // work main path, you can change this to "articles" (/articles)
 	},
 
 	post: {

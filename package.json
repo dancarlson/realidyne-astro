@@ -39,5 +39,9 @@
   },
   "engines": {
     "node": "^14.15.0 || >=16.0.0"
+  },
+  "dependencies": {
+    "photoswipe": "^5.3.3",
+    "zoomwall.js": "^2.0.3"
   }
 }
