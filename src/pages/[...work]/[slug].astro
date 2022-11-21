@@ -23,6 +23,23 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
+const images = response.results
+  .map((page) => {
+    if ('properties' in page) {
+      const title = page.properties.Title;
+      if (title && 'type' in title && title.type === 'title') {
+        return title.title[0];
+      }
+    }
+    return false;
+  })
+  .filter((title): title is RichTextItemResponse => !!title)
+  .map((title) => {
+    const separator = 'https://';
+    const [label = '', href] = title.plain_text.split(separator);
+
+    return { label, href: `${separator}${href}` };
+  });
 
 const meta = {
 	title: `${post.title} — ${SITE.name}`,
@@ -35,5 +52,33 @@ const meta = {
 ---
 
 <Layout {meta}>
+	<div class="max-w-screen-xl px-4 md:px-8 mx-auto">
+        <div
+          id="my-gallery"
+          class="pswp-gallery grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 xl:gap-8 gallery"
+        >
+          {
+            images.map((image) => (
+              <a
+                href={image.href}
+                data-cropped="true"
+                data-pswp-width="2500"
+                data-pswp-height="2500"
+                class=" group h-72 md:h-96 flex justify-end items-end bg-gray-100 overflow-hidden rounded-xl shadow-lg relative gallery-item hover:shadow-xl"
+              >
+                <div class="w-full h-full flex object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200 text-transparent">
+                  <Img src={image.href} alt={image.label} width={400} />
+                </div>
+
+                <div class="bg-gradient-to-t from-black via-transparent to-transparent opacity-20 absolute inset-0 pointer-events-none group-hover:opacity-0 transition duration-200" />
+
+                <span class="inline-block text-gray-200 text-xs md:text-sm border border-gray-500 rounded-lg backdrop-blur relative px-2 md:px-3 py-1 mr-3 mb-3 group-hover:opacity-0 transition duration-200">
+                  {image.label}
+                </span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
 	<SinglePost post={{ ...post, image: meta.image }} />
 </Layout>

@@ -6,6 +6,18 @@ excerpt: "Sint sit cillum pariatur eiusmod nulla pariatur ipsum. Sit laborum ani
 image: "~/assets/images/portfolio/Dole - Unite for a Healthy Galaxy /image/Dole_Unite_Thumbnails_02_750-x-750_02.jpg"
 category: "Augmented Reality"
 tags: [Dole, Video, Mobile App]
+gallery:
+    name: "Gallery 1"
+    images:
+        image:
+            name: "pic 1"
+            url: "~/assets/images/portfolio/Dole - Unite for a Healthy Galaxy /image/Dole_Unite_Thumbnails_02_750-x-750_02.jpg"
+        image:
+            name: "pic 2"
+            url: "~/assets/images/portfolio/Dole - Unite for a Healthy Galaxy /image/Dole_Unite_Thumbnails_02_750-x-750_02.jpg"
+        image:
+            name: "pic 3"
+            url: "~/assets/images/portfolio/Dole - Unite for a Healthy Galaxy /image/Dole_Unite_Thumbnails_02_750-x-750_02.jpg"
 ---
 ## Dole - Unite for a Healthy Galaxy
 
